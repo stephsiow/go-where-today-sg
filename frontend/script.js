@@ -40,8 +40,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     async function generateResponse(weather, childAge) {
-        const apiKey = process.env.OPENAI_API_KEY; 
-        const apiUrl = "https://api.openai.com/v1/chat/completions";
+        const apiUrl = "/openai-api";
 
         const prompt = `Given the weather in Singapore is ${weather} and my child is ${childAge} years old,`;
 
@@ -61,10 +60,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         const response = await fetch(apiUrl, {
             method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-                Authorization: `Bearer ${apiKey}`
-            },
+            headers: { "Content-Type": "application/json" },
             body: JSON.stringify(requestBody)
         });
 
