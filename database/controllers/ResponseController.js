@@ -2,19 +2,20 @@ const Response = require('../models/Response');
 
 //Show the list of Responses 
 const index = (req, res, next) => {
-    Response.find()
-    .sort({$natural:1})
-    .limit(5)
-    .then(response => {
-        res.json({
-            response
+    Response
+        .find()
+        .sort({createdAt: -1})
+        .limit(5)
+        .then(response => {
+            res.json({
+                response
+            })
         })
-    })
-    .catch(error => {
-        res.json({
-            message: "An error occurred!"
+        .catch(error => {
+            res.json({
+                message: "An error occurred!"
+            })
         })
-    })
 }
 
 const show = (req, res, next) => {
