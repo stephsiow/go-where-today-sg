@@ -17,11 +17,11 @@ _Here are the instructions to set this website up on your own._
    ```js
    npm start
    ```
-5. Enter your API in `script.js`
+5. Enter your API in `server.js`
    ```js
-   const apiKey = 'ENTER YOUR API';
+   const apiKey = process.env.<ENTER YOUR API>; 
    ```
 
 ## License
 
-Distributed under the MIT License. See `LICENSE.txt` for more information.
+Distributed under the MIT License. 
